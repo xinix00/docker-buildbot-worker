@@ -19,14 +19,8 @@ RUN \
 # install pip dependencies
     pip install --upgrade pip setuptools && \
     pip install buildbot-worker==0.9.9.post2 && \
-    rm -r /root/.cache && \
-
-# Create user & dir
-addgroup -S buildbot && \
-adduser -S -g buildbot buildbot && \
-chown buildbot:buildbot /buildbot
+    rm -r /root/.cache
 
 # Finalize
-USER buildbot
 WORKDIR /buildbot
 CMD ["dumb-init", "twistd", "-ny", "buildbot.tac"]
