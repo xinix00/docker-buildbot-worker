@@ -11,7 +11,7 @@ RUN \
         git \
         sed \
         python \
-        py-pip \
+            py-pip \
 	    py-twisted \
         dumb-init@edge\
         tar \
@@ -19,7 +19,7 @@ RUN \
         curl && \
 # install pip dependencies
     pip install --upgrade pip setuptools && \
-    pip install buildbot-worker==0.9.9.post2 && \
+    pip install buildbot-worker==0.9.10 && \
     rm -r /root/.cache
 
 # Finalize
